@@ -391,7 +391,6 @@ func reset() -> void:
 			child.reset()
 	_end_flash_sprite()
 
-
 func _on_heart_change(delta: int, total: int):
 	if delta < 0:
 		$HurtSFX.play()

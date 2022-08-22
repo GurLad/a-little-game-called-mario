@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/levels/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/SpawnPoint.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/friends/Blug.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/NotesNewTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/ui/Themes/Default/default.tres" type="Theme" id=11]
+[ext_resource path="res://scenes/friends/PlayableCharacter.tscn" type="PackedScene" id=12]
 
 [node name="Hub" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -132,6 +133,9 @@ pageName = "Little Mario"
 pageDesc = "Hey, that's me, Little Mario!
 
 This is where I make notes about my adventures! As I meet new people and make new discoveries, I'm going to make sure to write all about them here!"
+
+[node name="PlayableCharacter" parent="." instance=ExtResource( 12 )]
+position = Vector2( -49, 21 )
 
 [editable path="Instructions"]
 [editable path="PictureFrameStar"]
