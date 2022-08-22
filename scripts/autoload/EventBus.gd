@@ -7,6 +7,7 @@ signal heart_changed(delta, total)
 signal jumping()
 signal player_died()
 signal shot()
+signal player_changed(data)
 
 # Inventory
 signal bus_collected(data)
