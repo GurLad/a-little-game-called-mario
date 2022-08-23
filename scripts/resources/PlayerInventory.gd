@@ -12,6 +12,7 @@ export var has_flower: bool
 export (int, 0, 5) var flower_amount: int = MAX_FLOWER setget set_flower_amount
 export var has_bus: bool
 export var stars: Dictionary
+export var character: String = "Mario"
 
 
 func _init():
@@ -35,6 +36,7 @@ func reset() -> void:
 	has_flower = false
 	has_bus = false
 	stars = {}
+	character = "Mario"
 
 
 func reset_to(inventory: PlayerInventory):
@@ -47,6 +49,7 @@ func reset_to(inventory: PlayerInventory):
 	has_flower = inventory.has_flower
 	has_bus = inventory.has_bus
 	stars = inventory.stars
+	character = inventory.character
 
 
 func _on_fireflower_collected(data := {}) -> void:

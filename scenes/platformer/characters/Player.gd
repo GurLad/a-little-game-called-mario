@@ -40,13 +40,15 @@ var powerupspeed = 1
 var powerupaccel = 1
 
 onready var pivot: Node2D = $Pivot
-onready var sprite := $Pivot/Sprite
-onready var anim: AnimationPlayer = $Pivot/Sprite/Anims
-onready var effect_anim: AnimationPlayer = $Pivot/Sprite/EffectAnims
+onready var player_sprites := $Pivot/PlayerSprites
 onready var tween: Tween = $Tween
 onready var collision: CollisionShape2D = $Collision
 onready var hitbox: Area2D = $Hitbox
 onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
+
+onready var sprite: AnimatedSprite = $Pivot/PlayerSprites/Mario
+onready var anim: AnimationPlayer = $Pivot/PlayerSprites/Mario/Anims
+onready var effect_anim: AnimationPlayer = $Pivot/PlayerSprites/Mario/EffectAnims
 
 onready var original_collision_extents: Vector2 = collision.shape.extents
 onready var original_hitbox_extents: Vector2 = hitbox_collision.shape.extents
@@ -58,6 +60,7 @@ onready var stretch_scale = Vector2(original_scale.x * 0.4, original_scale.y * 1
 
 
 func _ready() -> void:
+	player_sprites.init(self)
 	_end_flash_sprite()
 	uncrouch()
 

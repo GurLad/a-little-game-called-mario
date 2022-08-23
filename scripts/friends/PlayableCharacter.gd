@@ -1,11 +1,9 @@
 extends Powerup
 class_name PlayableCharacter
 
+export var character_name: String
 var moustache_pos: float
 onready var sprite := $AnimatedSprite
 
 func _on_PlayableCharacter_body_entered(body):
-	call_deferred("collect", "player_changed")
-	if body is Player:
-		print("AAAA")
-		body.sprite.frames = sprite.frames
+	call_deferred("collect", "player_changed", {"name": character_name})

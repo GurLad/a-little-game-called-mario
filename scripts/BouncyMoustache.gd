@@ -1,8 +1,6 @@
 extends Node2D
 class_name BouncyMoustache
 
-onready var player: Player = owner
-
 onready var line1 = $DampedSpringJoint2D/point1/Line2D
 onready var segment1 = $DampedSpringJoint2D/point2
 onready var rightSegment = $DampedSpringJoint2D
@@ -14,11 +12,18 @@ onready var leftSegment = $DampedSpringJoint2D2
 onready var curve2: Curve2D = Curve2D.new()
 
 onready var base_position_y: float = position.y
+
+var player: Player
 const vecOffset = Vector2(0, 10)
 
-
 func _process(_delta):
-	position.y = base_position_y + (0.0 if not player.crouching else 17.5)
+	# Terrible workaround, but for some reason the owner is sometimes the CharacterSprite and others the Player
+	if player != null:
+		position.y = base_position_y + (0.0 if not player.crouching else 17.5)
+	elif owner is Player:
+		player = owner
+	elif owner is PlayerSprites:
+		player = owner.player
 
 	line1.global_rotation = rightSegment.rotation
 	for _p in range(curve1.get_point_count()):

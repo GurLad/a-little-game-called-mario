@@ -12,3 +12,4 @@ flower_amount = 5
 has_bus = false
 stars = {
 }
+character = "Mario"
