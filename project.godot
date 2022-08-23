@@ -172,7 +172,7 @@ _global_script_classes=[ {
 "base": "Powerup",
 "class": "PlayableCharacter",
 "language": "GDScript",
-"path": "res://scripts/friends/PlayableCharacter.gd"
+"path": "res://scripts/powerups/PlayableCharacter.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",

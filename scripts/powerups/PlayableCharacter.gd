@@ -1,7 +1,7 @@
 extends Powerup
 class_name PlayableCharacter
 
-export var character_name: String
+export(String) var character_name: String
 var moustache_pos: float
 onready var sprite := $AnimatedSprite
 

@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/friends/Blug.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/NotesNewTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/ui/Themes/Default/default.tres" type="Theme" id=11]
-[ext_resource path="res://scenes/friends/PlayableCharacter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/powerups/PlayableCharacter.tscn" type="PackedScene" id=12]
 
 [node name="Hub" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -136,6 +136,7 @@ This is where I make notes about my adventures! As I meet new people and make ne
 
 [node name="PlayableCharacter" parent="." instance=ExtResource( 12 )]
 position = Vector2( -49, 21 )
+character_name = "Luigi"
 
 [editable path="Instructions"]
 [editable path="PictureFrameStar"]
