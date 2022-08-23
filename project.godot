@@ -169,7 +169,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Platform.gd"
 }, {
-"base": "Powerup",
+"base": "Node2D",
 "class": "PlayableCharacter",
 "language": "GDScript",
 "path": "res://scripts/powerups/PlayableCharacter.gd"

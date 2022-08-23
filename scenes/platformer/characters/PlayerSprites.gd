@@ -26,4 +26,4 @@ func _set_player(name):
 		inventory.character = name
 		
 func _player_changed_handler(data):
-	_set_player(data["name"])
+	_set_player(data)

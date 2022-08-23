@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/levels/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/SpawnPoint.tscn" type="PackedScene" id=2]
@@ -12,6 +12,22 @@
 [ext_resource path="res://scenes/objects/NotesNewTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/ui/Themes/Default/default.tres" type="Theme" id=11]
 [ext_resource path="res://scenes/powerups/PlayableCharacter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://sprites/mario.png" type="Texture" id=13]
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=78]
+animations = [ {
+"frames": [ SubResource( 79 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 11, 13.5 )
 
 [node name="Hub" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -134,9 +150,21 @@ pageDesc = "Hey, that's me, Little Mario!
 
 This is where I make notes about my adventures! As I meet new people and make new discoveries, I'm going to make sure to write all about them here!"
 
-[node name="PlayableCharacter" parent="." instance=ExtResource( 12 )]
+[node name="Mario" parent="." instance=ExtResource( 12 )]
+position = Vector2( 241, 21 )
+character_name = "Mario"
+
+[node name="AnimatedSprite" parent="Mario/PowerUp" index="0"]
+frames = SubResource( 78 )
+
+[node name="CollisionShape2D" parent="Mario/PowerUp" index="1"]
+position = Vector2( 0, 5 )
+shape = SubResource( 80 )
+
+[node name="Luigi" parent="." instance=ExtResource( 12 )]
 position = Vector2( -49, 21 )
 character_name = "Luigi"
 
 [editable path="Instructions"]
 [editable path="PictureFrameStar"]
+[editable path="Mario"]
